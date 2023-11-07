@@ -5,7 +5,7 @@
 ** apps
 */
 
-#include "APPS/apps.h"
+#include "apps/apps.h"
 
 apps::apps(uint8_t syncPin, uint8_t sensorPin)
 {
