@@ -9,7 +9,13 @@ jobs:
       matrix:
         # os: [ubuntu-latest, macos-latest, windows-latest]
         os: [ubuntu-latest]
-        example: [examples/APPS/main.cpp, examples/R2D/main.cpp, examples/ThrottleInterlock/main.cpp]
+        example: [
+          examples/APPS/main.cpp, 
+          examples/ThrottleInterlock/main.cpp, 
+          examples/R2D-brain/main.cpp, 
+          examples/R2D/main-starter.cpp, 
+          examples/R2D/main-buzzer.cpp
+        ]
 
     steps:
       - uses: actions/checkout@v3
