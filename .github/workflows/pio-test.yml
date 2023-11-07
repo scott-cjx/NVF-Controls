@@ -4,14 +4,12 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         # os: [ubuntu-latest, macos-latest, windows-latest]
         os: [ubuntu-latest]
-        example: [examples/example1/example1.c, examples/example2/example2.c]
-        special-example: [examples/example2/example2.c]
+        example: [examples/APPS/main.cpp, examples/R2D/main.cpp, examples/ThrottleInterlock/main.cpp]
 
     steps:
       - uses: actions/checkout@v3
@@ -39,7 +37,3 @@ jobs:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
           PLATFORMIO_BUILD_FLAGS: -D BOARD_BLUEPILL
       
-      # - name: Run PlatformIO CI LCD
-      #   run: pio ci --lib="." --project-option="lib_deps=marcoschwartz/LiquidCrystal_I2C@^1.1.4" --board=uno --board=bluepill_f103c8
-      #   env:
-      #     PLATFORMIO_CI_SRC: ${{matrix.special-example}}
