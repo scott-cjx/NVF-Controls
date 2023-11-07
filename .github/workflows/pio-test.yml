@@ -13,8 +13,8 @@ jobs:
           examples/APPS/main.cpp, 
           examples/ThrottleInterlock/main.cpp, 
           examples/R2D-brain/main.cpp, 
-          examples/R2D/main-starter.cpp, 
-          examples/R2D/main-buzzer.cpp
+          examples/R2D-starter/main.cpp,
+          examples/R2D-buzzer/main.cpp
         ]
 
     steps:
