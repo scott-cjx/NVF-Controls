@@ -9,6 +9,7 @@
 #define COMMS_DEF_H_
 
 #include <stdint.h>
+#include <NVF_CanBus.h>
 
 namespace CommsDef
 {

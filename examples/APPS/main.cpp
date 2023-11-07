@@ -13,7 +13,7 @@
 
 #include <NVF_CanBus.h>
 
-#include "NVF2/APPS/apps.h"
+#include "APPS/apps.h"
 
 #define APPS        1
 #define DELAY_MS    1
