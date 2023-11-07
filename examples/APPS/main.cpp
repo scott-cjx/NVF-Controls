@@ -26,7 +26,7 @@
     #endif
 #endif
 MCP_CAN NVFCanI0(BoardDef::PIN_CANSPI_CSN);
-NVF_CanBusNVFCan0(&NVFCanI0, this_can_id);
+NVF_CanBus NVFCan0(&NVFCanI0, this_can_id);
 can_frame txBuf;
 
 apps appsHandler(BoardDef::PIN_SYNC_PIN, BoardDef::PIN_ADC_1_0);

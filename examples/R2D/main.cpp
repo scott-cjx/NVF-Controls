@@ -26,7 +26,7 @@ CommsHandler commsHandler;
 ThrottleInterlock throttleInterlock;
 
 MCP_CAN NVFCanI0(BoardDef::PIN_CANSPI_CSN);
-NVF_CanBusNVFCan0(&NVFCanI0, CommsDef::R2D_CAN_ID);
+NVF_CanBus NVFCan0(&NVFCanI0, CommsDef::R2D_CAN_ID);
 can_frame txBuf0;
 
 void setup() {
