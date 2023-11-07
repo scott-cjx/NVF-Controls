@@ -8,6 +8,7 @@
 #include "commsHandler.h"
 #include <time.h>
 
+// todo: remove this 
 uint32_t apps_time = 0;
 uint32_t systemComms_t::comms_id = 0;
 
