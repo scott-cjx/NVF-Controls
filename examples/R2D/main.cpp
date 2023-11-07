@@ -19,7 +19,7 @@
 #include "throttleInterlock.h"
 #include "commsHandler.h"
 
-#include <NVF_Can.h>
+#include <NVF_CanBus.h>
 
 StateMachine stateMachine;
 CommsHandler commsHandler;

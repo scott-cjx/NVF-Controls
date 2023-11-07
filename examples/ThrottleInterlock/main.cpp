@@ -12,7 +12,7 @@
 #include "stateMachine.h"
 #include "throttleInterlock.h"
 
-#include <NVF_Can.h>
+#include <NVF_CanBus.h>
 
 StateMachine stateMachine;
 CommsHandler commsHandler;

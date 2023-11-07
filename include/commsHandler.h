@@ -16,7 +16,7 @@
 #include "commsDef.h"
 #include "stateMachine.h"
 
-#include <NVF_Can.h>
+#include <NVF_CanBus.h>
 
 #define numberCommsInterfaces 5
 #define tAcceptableHeartbeatLossMs 10.0

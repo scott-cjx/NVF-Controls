@@ -11,7 +11,7 @@
 #include "commsHandler.h"
 #include "stateMachine.h"
 
-#include <NVF_Can.h>
+#include <NVF_CanBus.h>
 
 #include "NVF2/APPS/apps.h"
 
