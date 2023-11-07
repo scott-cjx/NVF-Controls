@@ -26,13 +26,13 @@ jobs:
         run: pip install --upgrade platformio
 
       - name: Run PlatformIO CI UNO
-        run: pio ci --lib="." --lib="https://github.com/scott-cjx/NVFCanBus.git" --board=uno
+        run: pio ci --lib="." --project-option="lib_deps=https://github.com/scott-cjx/NVFCanBus.git" --board=uno
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
           PLATFORMIO_BUILD_FLAGS: -D BOARD_UNO
       
       - name: Run PlatformIO CI BLUEPILL
-        run: pio ci --lib="." --lib="https://github.com/scott-cjx/NVFCanBus.git" --board=bluepill_f103c8
+        run: pio ci --lib="." --project-option="lib_deps=https://github.com/scott-cjx/NVFCanBus.git" --board=bluepill_f103c8
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
           PLATFORMIO_BUILD_FLAGS: -D BOARD_BLUEPILL
