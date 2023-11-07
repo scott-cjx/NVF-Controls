@@ -10,7 +10,7 @@
 
 #include <Arduino.h>
 #include <stdint.h>
-#include "NVF2/commsHandler.h"
+#include "commsHandler.h"
 
 enum PinModeType
 {

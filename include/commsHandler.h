@@ -9,9 +9,6 @@
 #define COMMSHANDLER_H_
 
 #include <Arduino.h>
-#include <HardwareSerial.h>
-#include <SPI.h>
-#include <mcp_can.h>
 #include <stdint.h>
 #include <time.h>
 
