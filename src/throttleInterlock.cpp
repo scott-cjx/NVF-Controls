@@ -5,7 +5,7 @@
 ** throttleInterlock
 */
 
-#include "NVF2/throttleInterlock.h"
+#include "throttleInterlock.h"
 
 /**
  * @brief Construct a new Throttle Interlock:: Throttle Interlock object
