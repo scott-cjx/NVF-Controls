@@ -20,13 +20,13 @@ ThrottleInterlock throttleInterlock;
 
 //FIRST CAN Network
 MCP_CAN NVFCanI0(BoardDef::PIN_CANSPI_CSN);
-NVF_Can NVFCan0(&NVFCanI0, CommsDef::THROTTLEINTERLOCK_CAN_ID);
+NVF_CanBusNVFCan0(&NVFCanI0, CommsDef::THROTTLEINTERLOCK_CAN_ID);
 can_frame rxBuf0;
 can_frame txBuf0;
 
 //Second CAN Network
 MCP_CAN NVFCanI1(BoardDef::PIN_CANSPI_CSN2);
-NVF_Can NVFCan1(&NVFCanI1, CommsDef::THROTTLEINTERLOCK_CAN_ID);
+NVF_CanBusNVFCan1(&NVFCanI1, CommsDef::THROTTLEINTERLOCK_CAN_ID);
 can_frame rxBuf1;
 can_frame txBuf1;
 
