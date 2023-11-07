@@ -72,7 +72,7 @@ void apps::getRawSensorVal(uint64_t *buf)
     *buf = this->sensorCurrVal;
 }
 
-bool apps::getMappedSensorVal(uint8_t *buf)
+bool apps::getMappedSensorVal(uint16_t *buf)
 {
     // catch to make sure the values are not out of bounds
     // if OOB, perhaps short circuit/ error in reading

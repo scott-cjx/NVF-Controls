@@ -29,8 +29,7 @@ struct analogSensor_t
 class apps
 {
 private:
-    bool isInited = 0;
-
+    
     uint8_t sensorPin = 0;
     PinModeType sensorModeType;
     uint8_t syncPin = 0;
@@ -46,11 +45,10 @@ public:
     void readSyncVal();
 
     void getRawSensorVal(uint64_t *);
-    bool getMappedSensorVal(uint8_t *);
+    bool getMappedSensorVal(uint16_t *);
 
     bool calibrate(CommsHandler *);
     bool calibrateIfRequested(CommsHandler *);
 };
-
 
 #endif /* !APPS_H_ */

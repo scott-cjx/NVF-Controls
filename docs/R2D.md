@@ -29,3 +29,10 @@ These are the key nodes in the R2D network.
 
 \* optional, depending on conditions
 
+## Flow
+
+1. triggered R2D conditions (...)
+2. send R2D trigger to main Can Network
+3. Check if stateMachine advertise car state as R2D
+4. send buzzer trigger via R2D Can Network
+
