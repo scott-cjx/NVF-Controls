@@ -87,7 +87,6 @@ enum CAR_STOP_CONDITIONS: uint16_t
 
 enum STATEMACHINE_RPT_MODE: uint8_t
 {
-    HEARTBEAT,
     STD_RPT
 };
 
