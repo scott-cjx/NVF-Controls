@@ -15,16 +15,42 @@ namespace CommsDef
 {
     const uint8_t CAN_SPEED = CAN_500KBPS;
 
-    const uint32_t THROTTLEINTERLOCK_CAN_ID = 0xFFD1;
-    const uint32_t DATACOLLECTOR_CAN_ID = 0xFFD2;
+    namespace  PEDAL_NETWORK
+    {
+        enum CAN_ID: uint32_t
+        {
+            VCU1, // Statemachine1
+            VCU2, // Statemachine2
+            APPS1,
+            APPS2,
+            BPPC1,
+            BPPC2,
+            THROTTLEINTERLOCK1,
+            THROTTLEINTERLOCK2
+        };
+        enum MESSAGES: uint8_t
+        {
+            RPT_APPS,
+            RPT_BPPC,
+            RPT_STATEMACHINE,
+            RPT_THROTTLE,
+        };
+    };
 
-    const uint32_t APPS1_CAN_ID = 0xFFA1;
-    const uint32_t APPS2_CAN_ID = 0xFFA2;
+    namespace VCU_NETWORK
+    {
+        enum CAN_ID: uint32_t
+        {
+            VCU1, // Statemachine1
+            VCU2, // Statemachine2
+            R2D
+        };
 
-    const uint32_t BPPC1_CAN_ID = 0xFFB1;
-    const uint32_t BPPC2_CAN_ID = 0xFFB2;
-
-    const uint32_t R2D_CAN_ID = 0xFFD3; 
+        enum MESSAGES: uint8_t
+        {
+            RPT_STATEMACHINE,
+        };
+    };
 }
 
 #endif /* !COMMS_DEF_H_ */

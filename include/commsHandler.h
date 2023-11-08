@@ -12,6 +12,7 @@
 #include <stdint.h>
 #include <time.h>
 
+#include "messages/msgPedalReading.h"
 #include "boardDef.h"
 #include "commsDef.h"
 #include "stateMachine.h"
@@ -24,10 +25,10 @@
 struct systemComms_t
 {
     bool initiated = 0;
-    static uint32_t comms_id;
-    time_t tValidHeartbeat;
-    double tSinceValidHeartbeatMs;
-    can_frame frame;
+    uint32_t comms_id = 0xFFFFFFFF;
+    time_t tValidHeartbeat = 0xFFFFFFFF;
+    double tSinceValidHeartbeatMs = 0xFFFFFFFF;
+    can_frame frame = can_frame();
 };
 
 class CommsHandler
@@ -43,6 +44,7 @@ public:
     bool trnsBuf(systemComms_t *, can_frame*); 
 
     void taskHeartbeatCheck(systemComms_t *, CAR_STOP_CONDITIONS);
+    bool taskHeartbeatCheck(systemComms_t *);
     void taskImplausiblyCheck(systemComms_t *, systemComms_t *, CAR_STOP_CONDITIONS);
 };
 

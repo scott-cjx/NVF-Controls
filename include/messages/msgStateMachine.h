@@ -1,15 +1,4 @@
-/*
-** NANYANG VENTURE FORMULA RACING, 2023
-** NVF_DA_StateMachine
-** File description:
-** stateMachine
-*/
-
-#ifndef STATEMACHINE_H_
-#define STATEMACHINE_H_
-
-#include "stdint.h"
-#include "time.h"
+#include <stdint.h>
 
 enum CAR_STATES: uint8_t
 {
@@ -96,30 +85,33 @@ enum CAR_STOP_CONDITIONS: uint16_t
     E_STOP
 };
 
-class StateMachine
+enum STATEMACHINE_RPT_MODE: uint8_t
 {
-private:
-    CAR_STATES carState;
-    CAR_STOP_CONDITIONS carStopReason;
-
-public:
-    StateMachine();
-
-    /** car states */
-    CAR_STATES getCarState(void);
-    void setCarState(CAR_STATES);
-    void setCarStateStop(CAR_STOP_CONDITIONS);
-    void setCarStateStopped(void);
-    void setCarStateReady(void);
-    void setCarStateGoing(void);
-    /** car states */
-
-    /** car stop reason */
-    CAR_STOP_CONDITIONS getCarStopReason(void);
-    void setCarStopReason(CAR_STOP_CONDITIONS);
-    /** car stop reason */
-
-    void getCarStatusCode(uint8_t *);
+    HEARTBEAT,
+    STD_RPT
 };
 
-#endif /* !STATEMACHINE_H_ */
+struct MsgStateMachine_t
+{
+    const uint8_t       msgDlc = 3;
+    uint8_t             report_mode;
+    CAR_STATES          carState;
+    CAR_STOP_CONDITIONS carStopReason;
+
+    bool struct_to_msg(uint8_t *dst[], uint8_t* dlc)
+    {
+        *dst[0] = (uint8_t) carState;
+        *dst[1] = (uint8_t) carStopReason & 0xFF;
+        *dst[2] = (uint8_t) (carStopReason >> 8);
+        *dlc = msgDlc;
+        return 1;
+    }
+
+    bool msg_to_struct(uint8_t *from, uint8_t* dlc)
+    {
+        if (*dlc != msgDlc) {return 0;}
+        carState = (CAR_STATES) from[0];
+        carStopReason = (CAR_STOP_CONDITIONS) (from[2] | (from[1] << 8));
+        return 1;
+    }
+};
