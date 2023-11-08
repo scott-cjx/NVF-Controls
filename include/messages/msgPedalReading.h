@@ -16,7 +16,7 @@
 
 enum PEDAL_RPT_MODE : uint8_t
 {
-  HEARTBEAT,
+  // HEARTBEAT,
   RAW,
   MAPPED,
   CALIBRATING
@@ -59,7 +59,7 @@ struct MsgPedalReading_t
       *dst[2] = (uint8_t)(rawReading >> 8);
       *dlc = 3;
       break;
-    case PEDAL_RPT_MODE::HEARTBEAT:
+    // case PEDAL_RPT_MODE::HEARTBEAT:
     default:
       return 0;
       break;
