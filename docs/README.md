@@ -1,4 +1,4 @@
-# NVF Controls
+# Overview
 
 This is the main repository for the [Nanyang Venture Formula](.) Racing Team's data acquisition subsystem. Contents for work and their documentation includes:
 
@@ -6,9 +6,9 @@ This is the main repository for the [Nanyang Venture Formula](.) Racing Team's d
 
 We strife to adopt the "1 Job" modality, where every node in every system should only do 1 Job, and be best at it.
 
-Enough? We think not! Each component will have a failsafe. The system is deisgned in a way that there **should** not have any single point of failures (at least for critical components). For example, there are 2 Vehicle Control Units (VCUs) that both serve the same purpose and run **concurrently**.
+Enough? We think not! Each component will have a failsafe. The system is designed in a way that there **should** not have any single point of failures (at least for critical components). For example, there are 2 Vehicle Control Units (VCUs) that both serve the same purpose and run **concurrently**.
 
-To segregate systems, seperate CanBus networks will be used.
+To segregate systems, seperate CanBus networks are used.
 
 ![img-OverallSystemArchitecture](rsc/img-OverallSystemArchitecture.png)
 
@@ -24,7 +24,7 @@ There are 2 types of "1 Job" Nodes:
 
 ### Brain Nodes
 
-**Subsystem level** - Brain Nodes are nodes usually makes small (low priority) decisions for the subsystem. other jobs include:
+**Subsystem level** - Brain Nodes are nodes that usually make small (low priority) decisions for the subsystem. Other jobs include:
 
 1. Connecting 2 CanBus networks together
    - relaying messages from 1 network to another (status report/ decision requests)
@@ -32,7 +32,7 @@ There are 2 types of "1 Job" Nodes:
 
 ---
 
-**VCU level** - Brain Nodes are nodes that make major decisions for the entire car and all its subsystems.
+**VCU level** - Brain Nodes are nodes that make major decisions for the entire car and all its subsystems. Other jobs include:
 
 1. Maintaining the stateMachine and transmitting the car's state to all subsystems
 2. Performing heartbeat and plausibility checks for all nodes in its system. (this includes the other brain node in the system)
@@ -46,4 +46,7 @@ There are 2 types of "1 Job" Nodes:
 
 ## Custom Printed Circuit Boards (PCBs)
 
-- [1Job Lite](.)
+- [1 Job Lite](.)
+- [1 Job Pro](.)
+- [Brain Lite](.)
+- [Brain Pro](.)
