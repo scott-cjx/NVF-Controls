@@ -24,7 +24,7 @@
 #define TI_ID 0
 #endif
 
-bool chk_stateMachine(bool *);
+bool chk_stateMachine();
 
 CommsHandler commsHandler;
 ThrottleInterlock throttleInterlock;
