@@ -94,7 +94,7 @@ struct MsgPedalReading_t
       minRawReading = (uint16_t)(from[4] | (from[3] << 8));
       maxRawReading = (uint16_t)(from[6] | (from[5] << 8));
 
-    case PEDAL_RPT_MODE::HEARTBEAT:
+    // case PEDAL_RPT_MODE::HEARTBEAT:
     default:
       break;
     }
