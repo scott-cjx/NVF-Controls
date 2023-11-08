@@ -43,7 +43,24 @@ namespace CommsDef
         {
             VCU1, // Statemachine1
             VCU2, // Statemachine2
-            R2D
+            R2D_BRAIN
+        };
+
+        enum MESSAGES: uint8_t
+        {
+            RPT_STATEMACHINE,
+        };
+    };
+
+    namespace R2D_NETWORK
+    {
+        enum CAN_ID: uint32_t
+        {
+            VCU1, // Statemachine1
+            VCU2, // Statemachine2
+            R2D_BRAIN,
+            R2D_STARTER,
+            R2D_BUZZER
         };
 
         enum MESSAGES: uint8_t

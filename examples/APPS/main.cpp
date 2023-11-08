@@ -21,7 +21,7 @@
 
 void calibrate();
 
-const uint32_t this_can_id = APPS ? CommsDef::APPS1_CAN_ID : CommsDef::APPS2_CAN_ID;
+const uint32_t this_can_id = APPS ? CommsDef::PEDAL_NETWORK::CAN_ID::APPS1 : CommsDef::PEDAL_NETWORK::CAN_ID::APPS2;
 
 MCP_CAN NVFCanI0(BoardDef::PIN_CANSPI_CSN);
 NVF_CanBus NVFCan0(&NVFCanI0, this_can_id);

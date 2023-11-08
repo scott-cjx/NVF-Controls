@@ -21,7 +21,7 @@
 CommsHandler commsHandler;
 
 MCP_CAN NVFCanI0(BoardDef::PIN_CANSPI_CSN);
-NVF_CanBus NVFCan0(&NVFCanI0, CommsDef::R2D_CAN_ID);
+NVF_CanBus NVFCan0(&NVFCanI0, CommsDef::R2D_NETWORK::R2D_STARTER);
 can_frame txBuf0;
 
 void setup()
