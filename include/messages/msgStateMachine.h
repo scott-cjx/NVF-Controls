@@ -1,3 +1,17 @@
+/**
+ * @file msgStateMachine.h
+ * @author Scott CJX (scottcjx.w@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 08-11-2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
+#ifndef MSGSTATEMACHINE_H_
+#define MSGSTATEMACHINE_H_
+
 #include <stdint.h>
 
 enum CAR_STATES: uint8_t
@@ -87,6 +101,7 @@ enum CAR_STOP_CONDITIONS: uint16_t
 
 enum STATEMACHINE_RPT_MODE: uint8_t
 {
+    HEARTBEAT,
     STD_RPT
 };
 
@@ -114,3 +129,5 @@ struct MsgStateMachine_t
         return 1;
     }
 };
+
+#endif /* !MSGSTATEMACHINE_H_ */

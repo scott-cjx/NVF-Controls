@@ -1,7 +1,22 @@
+/**
+ * @file msgPedalReading.h
+ * @author Scott CJX (scottcjx.w@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 08-11-2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
+#ifndef MSGPEDALREADING_H_
+#define MSGPEDALREADING_H_
+
 #include <stdint.h>
 
 enum PEDAL_RPT_MODE : uint8_t
 {
+  HEARTBEAT,
   RAW,
   MAPPED,
   CALIBRATING
@@ -44,6 +59,7 @@ struct MsgPedalReading_t
       *dst[2] = (uint8_t)(rawReading >> 8);
       *dlc = 3;
       break;
+    case PEDAL_RPT_MODE::HEARTBEAT:
     default:
       return 0;
       break;
@@ -78,8 +94,11 @@ struct MsgPedalReading_t
       minRawReading = (uint16_t)(from[4] | (from[3] << 8));
       maxRawReading = (uint16_t)(from[6] | (from[5] << 8));
 
+    case PEDAL_RPT_MODE::HEARTBEAT:
     default:
       break;
     }
   }
 };
+
+#endif /* !MSGPEDALREADING_H_ */
