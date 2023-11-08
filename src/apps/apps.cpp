@@ -1,9 +1,13 @@
-/*
-** EPITECH PROJECT, 2023
-** NVF2-DA-Controls
-** File description:
-** apps
-*/
+/**
+ * @file apps.cpp
+ * @author Scott CJX (scottcjx.w@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 08-11-2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 #include "apps/apps.h"
 

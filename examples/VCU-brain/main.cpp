@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author Scott CJX (scottcjx.w@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 08-11-2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include <Arduino.h>
 #include "boardDef.h"
 #include "commsDef.h"
@@ -22,13 +33,6 @@ MCP_CAN NVFCanI1(BoardDef::PIN_CANSPI_CSN2);
 NVF_CanBus NVFCan1(&NVFCanI1, CommsDef::R2D_NETWORK::VCU1);
 can_frame rxBuf1;
 can_frame txBuf1;
-
-systemComms_t APPS1Comms;
-systemComms_t APPS2Comms;
-systemComms_t BPPC1Comms;
-systemComms_t BPPC2Comms;
-systemComms_t R2DComms; 
-// systemComms_t TIComms;
 
 void setup()
 {

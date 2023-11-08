@@ -1,9 +1,13 @@
-/*
-** NANYANG VENTURE FORMULA RACING, 2023
-** Untitled (Workspace)
-** File description:
-** commsHandler
-*/
+/**
+ * @file commsHandler.cpp
+ * @author Scott CJX (scottcjx.w@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 08-11-2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 #include "commsHandler.h"
 #include <time.h>
