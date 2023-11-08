@@ -30,33 +30,33 @@ struct MsgPedalReading_t
   uint16_t maxRawReading;
   uint8_t mappedReading;
 
-  bool struct_to_msg(uint8_t *dst[], uint8_t *dlc)
+  bool struct_to_msg(uint8_t *dst, uint8_t *dlc)
   {
-    *dst[0] = report_mode;
+    dst[0] = report_mode;
     switch (report_mode)
     {
     case PEDAL_RPT_MODE::CALIBRATING:
       // raw reading
-      *dst[1] = (uint8_t)rawReading & 0xFF;
-      *dst[2] = (uint8_t)(rawReading >> 8);
+      dst[1] = (uint8_t)rawReading & 0xFF;
+      dst[2] = (uint8_t)(rawReading >> 8);
 
       // min raw
-      *dst[3] = (uint8_t)minRawReading & 0xFF;
-      *dst[4] = (uint8_t)(minRawReading >> 8);
+      dst[3] = (uint8_t)minRawReading & 0xFF;
+      dst[4] = (uint8_t)(minRawReading >> 8);
 
       // max raw
-      *dst[5] = (uint8_t)maxRawReading & 0xFF;
-      *dst[6] = (uint8_t)(maxRawReading >> 8);
+      dst[5] = (uint8_t)maxRawReading & 0xFF;
+      dst[6] = (uint8_t)(maxRawReading >> 8);
 
       *dlc = 7;
       break;
     case PEDAL_RPT_MODE::MAPPED:
-      *dst[1] = (uint8_t)mappedReading;
+      dst[1] = (uint8_t)mappedReading;
       *dlc = 2;
       break;
     case PEDAL_RPT_MODE::RAW:
-      *dst[1] = (uint8_t)rawReading & 0xFF;
-      *dst[2] = (uint8_t)(rawReading >> 8);
+      dst[1] = (uint8_t)rawReading & 0xFF;
+      dst[2] = (uint8_t)(rawReading >> 8);
       *dlc = 3;
       break;
     // case PEDAL_RPT_MODE::HEARTBEAT:
